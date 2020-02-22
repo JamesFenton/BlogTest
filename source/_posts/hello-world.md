@@ -7,8 +7,22 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 
 ### Create a new post
 
-``` bash
-$ hexo new "My New Post"
+Here is some C#:
+``` cs
+public class UsersService
+{
+    private readonly HttpClient _http;
+    
+    public UsersService(HttpClient http)
+    {
+        _http = http;
+    }
+    
+    public Task<string> GetUsersAsync()
+    {
+        return _http.GetStringAsync("api/users");
+    }
+}
 ```
 
 More info: [Writing](https://hexo.io/docs/writing.html)
